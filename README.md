@@ -47,8 +47,9 @@
  ```
 
 - 下载训练好的人脸识别68特征关键点[模型](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)，解压后放入dat目录下。
+- 选择合适的告警音频，放入wav目录下，音频文件缺省名为alarm.wav 
 - 下载和安装[OBS](https://obsproject.com/download)程序来创建虚拟摄像头
-- 下载和安装[腾讯会议](https://meeting.tencent.com/) 或其他视频会议软件。
+- 下载和安装[腾讯会议](https://meeting.tencent.com/)或其他视频会议软件。
 
 #### 运行步骤
 
