@@ -8,9 +8,11 @@
 
 ## 项目摘要
 
-通过捕捉摄像头下学生的面部表情来判断上课的专注度，一旦发现走神的情况，即时发出提醒声叫醒学生，也可以自动触发短信通知预先设置的短信接收者，例如老师或家长等。
+通过捕捉摄像头下学生的面部表情来判断上课的专注度，一旦发现走神的情况，即时在屏幕上打印出提醒，并在打瞌睡时发出告警声叫醒学生。
 
 项目的实现采用了python编程，调用opencv，dlib等预制库，基于训练好的人脸识别68特征关键点模型来绘制面部特征，并利用深度学习算法来判断学生是否走神，进而触发告警，提醒等一系列操作。值得一提的是，程序输出的视频流可以作为在线视频会议软件例如腾讯会议的输入，从而可以无缝集成到日常网课教学中，无需额外投入任何硬件。
+
+此开源项目基于Python编写和实现，后续可通过可选插件自动触发短信通知预先设置的短信接收者，例如老师或监护人，这部分在源代码中没有展示。 
 
 ## 关键词
 
@@ -26,49 +28,45 @@
 
 #### Mac 操作系统（以此为例）
 
-- [Python](https://www.python.org/) 3.7 或以上，并安装如下必备预制库：
+- [Python](https://www.python.org/) 3.7 或以上，并安装如下必备预制库。考虑到国内下载速度较慢，建议切换到国内镜像，例如： `python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple dlib`
 
-  - opencv-python
 
-  - dlib
+ ```
+  cmake
+  dlib
+  imutils
+  scipy
+  numpy
+  opencv-python
+  keras
+  pygame
+  argparse
+  playsound
+  threading
+  cv2
+ ```
 
-  - imutils
-
-  - scipy
-
-  - numpy
-
-  - tensorflow
-
-  - keras
-
-  - pygame
-
-- 下载训练好的人脸识别68特征关键点[模型](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)，解压后放入data目录下。
-- 下载和安装[CamTwist](https://camtwiststudio.com/)程序来创建虚拟摄像头
-- 下载和安装[腾讯会议](https://meeting.tencent.com/)
+- 下载训练好的人脸识别68特征关键点[模型](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)，解压后放入dat目录下。
+- 下载和安装[OBS](https://obsproject.com/download)程序来创建虚拟摄像头
+- 下载和安装[腾讯会议](https://meeting.tencent.com/) 或其他视频会议软件。
 
 #### 运行步骤
 
-1. 走神监测和自动叫醒程序会启动系统内可用的摄像头，使用opencv和dlib库提取学生面部特征，通过深度学习算法实时监测学生的专注程度，在眼睛闭合超过给定帧时发出警报声，并在屏幕上打印出 “DROWSINESS ALERT！” 字样。
+1. 走神监测和自动叫醒程序会启动系统内可用的摄像头，提取学生面部特征，通过深度学习算法实时监测学生的专注程度，在眼睛闭合超过给定帧时发出警报声，并在屏幕上打印出 “Drowsiness!!!” 字样。也可以在监测学生打哈欠时在屏幕上打印出 “Yawning” 字样。
 
-   `python3 drowsy_learners.py `
+   `python3 drowsy_learner_detection.py `
 
-2. 运行CamTwist，并将走神监测程序的输出frame设置为新的虚拟摄像头视频流。
-   - 具体步骤待补充
+2. 运行OBS，开启虚拟摄像头场景，将走神监测程序的输出的`[pyhon3]Frame`设置为新的虚拟摄像头视频流。
 
-3. 用腾讯会议接入网课教学会议，并指定CamTwist的虚拟摄像头作为视频输入。
+3. 用腾讯会议接入网课教学会议，并指定OBS的虚拟摄像头作为视频输入。
    - 视频会议软件可以用其他支持虚拟摄像头的软件代替，例如Teams，Zoom，Skype等等。
-
-##### To Do List
-
-- [ ] 这一节需要补充一个流程图
-- [ ] 每一步可以加一些截图方便展示步骤和效果
-- [ ] 这一节可以录制一个展示视频
-
 
 
 ## 参考文献
+
+http://dlib.net/
+
+
 
 
 
