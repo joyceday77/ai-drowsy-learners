@@ -67,9 +67,9 @@
 
 ## 参考文献
 
-http://dlib.net/
-[Research on a Real-Time Driver Fatigue Detection Algorithm Based on Facial Video Sequences](https://www.mdpi.com/2076-3417/12/4/2224)
-[Real-Time Eye Blink Detection using Facial Landmarks](https://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf)
+- http://dlib.net/
+- [Research on a Real-Time Driver Fatigue Detection Algorithm Based on Facial Video Sequences](https://www.mdpi.com/2076-3417/12/4/2224)
+- [Real-Time Eye Blink Detection using Facial Landmarks](https://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf)
 
 
 
