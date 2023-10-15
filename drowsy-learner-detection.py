@@ -133,7 +133,7 @@ while True:  # 从视频流循环视频帧
         cv2.putText(frame, "mCOUNTER: {}".format(mCOUNTER), (300, 60),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)  # 在屏幕上显示打哈欠计数器
         cv2.putText(frame, "MAR: {:.2f}".format(mar), (480, 60),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2) # 在屏幕上实时显示嘴巴长宽比 
         
-        # 标注人脸，双眼和嘴巴位置
+        # 标注人脸, 双眼和嘴巴位置; 仅做显示用,注释掉不影响程序功能。
         left = rect.left()  
         top = rect.top()
         right = rect.right()
@@ -146,7 +146,7 @@ while True:  # 从视频流循环视频帧
         mouthHull = cv2.convexHull(mouth)  # 获取嘴巴凸包位置
         cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)  # 画出嘴巴轮廓
         
-        for i, point in enumerate(landmarks.parts()):  # 遍历特征点并在图像上绘制
+        for i, point in enumerate(landmarks.parts()):  # 遍历特征点并在图像上绘制　；仅做显示用,注释掉不影响程序功能。
             x, y = point.x, point.y
             cv2.circle(frame, (x, y), 3, (0, 0, 255), -1)  # 在特征点位置绘制红色圆圈
             cv2.putText(frame, str(i + 1), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), 1)  # 在特征点位置标出编号
